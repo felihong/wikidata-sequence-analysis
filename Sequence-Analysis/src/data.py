@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 
-class DataAnalyser(object):
+class DataAnalyser():
     """
     Support some basic operations for showing and analysing the dataset.
     """
