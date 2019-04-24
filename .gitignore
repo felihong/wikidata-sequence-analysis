@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+# Byte-compiled
 __pycache__/
 *.py[cod]
 *$py.class
@@ -7,3 +7,5 @@ __pycache__/
 .venv
 venv/
 ENV/
+
+.DS_Store
