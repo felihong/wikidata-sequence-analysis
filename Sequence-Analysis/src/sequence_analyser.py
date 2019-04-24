@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import data
-import activity
+from src import activity
 
 
 os.chdir('../data')
