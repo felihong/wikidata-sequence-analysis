@@ -1,11 +1,11 @@
 import os
 import pandas as pd
-import data
-from src import activity
+import data_analyser
+import activity
 
 
-os.chdir('../data')
-data_analyser = data.DataAnalyser('article_sample.csv')
+os.chdir('../../data')
+data_analyser = data_analyser.DataAnalyser('article_sample.csv')
 data = data_analyser.data
 
 activity_analyser = activity.ActivityAnalyser()

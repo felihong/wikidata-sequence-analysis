@@ -7,9 +7,8 @@ class DataAnalyser():
     Support some basic operations for showing and analysing the dataset.
     """
 
-
     def __init__(self, csvdata):
-        data = pd.read_csv(csvdata, parse_dates=True, encoding='utf-8', sep=',',
+        data = pd.read_csv(csvdata, parse_dates=True, encoding='utf-8', sep=',', keep_default_na=False,
                            dtype={'item_id': str,
                                   'item_name': str,
                                   'user_id': str,
@@ -31,16 +30,4 @@ class DataAnalyser():
     def quality_count(self):
         data = self.data.loc[:, ['item_id', 'rev_id', 'itemquality_prediction']]
         return data.groupby([data.item_id, data.itemquality_prediction]).agg(['count'])
-
-
-
-
-
-
-
-
-
-
-
-
 

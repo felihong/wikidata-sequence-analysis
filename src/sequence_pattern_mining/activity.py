@@ -1,6 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
-import data
+import data_analyser
 
 
 class ActivityAnalyser():
