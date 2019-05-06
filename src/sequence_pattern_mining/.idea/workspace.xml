@@ -21,7 +21,8 @@
       <file leaf-file-name="activity.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/activity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="465">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -58,6 +59,7 @@
         <option value="$PROJECT_DIR$/doc.ipynb" />
         <option value="$PROJECT_DIR$/data_analyser.py" />
         <option value="$PROJECT_DIR$/sequence_analyser.py" />
+        <option value="$PROJECT_DIR$/TEST_sequence_pattern_analysis.ipynb" />
       </list>
     </option>
   </component>
@@ -80,7 +82,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,6 +93,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,6 +243,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -249,7 +252,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.40137932" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15993538" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16235864" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -281,13 +284,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/activity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sequence_analyser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -311,20 +320,8 @@
     <entry file="file://$PROJECT_DIR$/src/data.py" />
     <entry file="file://$PROJECT_DIR$/src/activity.py" />
     <entry file="file://$PROJECT_DIR$/src/sequence_analyser.py" />
-    <entry file="file://$PROJECT_DIR$/doc/doc.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/doc.ipynb" />
+    <entry file="file://$PROJECT_DIR$/doc.ipynb" />
     <entry file="file://$PROJECT_DIR$/data_analyser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -339,9 +336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -352,9 +346,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TEST_sequence_pattern_analysis.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/activity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="465">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
