@@ -8,7 +8,7 @@ class DataAnalyser():
     """
 
     def __init__(self, csvdata):
-        data = pd.read_csv(csvdata, parse_dates=True, encoding='utf-8', sep=',', keep_default_na=False,
+        data = pd.read_csv(csvdata, parse_dates=True, encoding='utf-8', sep=',', 
                            dtype={'item_id': str,
                                   'item_name': str,
                                   'user_id': str,
