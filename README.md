@@ -15,8 +15,8 @@ The sample data are collected mainly for the following two perspectives:
 * All data above would be combined again with the repective editer information from ```wikidatawiki_p user table```, together with edit comments from ```wikidatawiki_p comment table```, user group information from ```wikidatawiki_p user_groups table```
 
 ### Data Schema
-| article_id | item_id | item_title | label | category|
-| :---: | :---: | :---: | :---: | :---: |
+ Article: | article_id | item_id | item_title | label | category|
+          | :---: | :---: | :---: | :---: | :---: |
 
 * ```article_id``` table ID, primary key
 * ```item_id``` edited item page ID
