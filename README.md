@@ -9,18 +9,17 @@ pip install -r requirements.txt
 ```
 
 ## Data Sample
-
 The sample data are collected mainly for the following two perspectives: 
 
 * Descriptive statistics of data collected
 * Bahaviour patterns with the help of sequence pattern mining
 
-### Data Collection 
+#### Data Collection 
 * Identify randomly 100 items per current quality prediction A, B, C, D, E, which are retrived from ```wikidatawiki_p page table : page_latest``` and ```ores API```
 * The edit histories of all items are retrieved from ```wikidatawiki_p revision table```
 * All data above would be combined again with the repective editer information from ```wikidatawiki_p user table```, together with edit comments from ```wikidatawiki_p comment table```, user group information from ```wikidatawiki_p user_groups table```
 
-### Data Schema
+#### Data Schema
 | article_id | item_id | item_title | label | category|
 | :---: | :---: | :---: | :---: | :---: |
 
@@ -68,7 +67,7 @@ The sample data are collected mainly for the following two perspectives:
 
 ## ORES
 
-### Installing
+#### Installing
 It is strongly suggested using virtual environment to install ores by firstly install python’s virtual environment and create a directory named python-environments, then navigate in the newly created directory:
 ```
 sudo apt install virtualenv
@@ -90,7 +89,7 @@ Now install ORES package in the virtual environment:
 pip install ores
 ```
 
-### Revision Scoring 
+#### Revision Scoring 
 The following steps show how to use ORES item_quality model scoring the given revisions as input, the data can be fetched from the commandline using the ORES built-in tools.
 
 To pull a sample, start with:
