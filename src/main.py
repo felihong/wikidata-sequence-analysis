@@ -1,12 +1,12 @@
 from prefix_span import PrefixSpan
 from js_distance import JS
-from sequence_generator import sequenceGenerator
+from sequence_generator import SequenceGenerator
 import pandas as pd
 
 
 if __name__ == '__main__':
 
-    seq = sequenceGenerator(csvfile='~/db/csvfile.csv', jsThreshold=0.01)
+    seq = SequenceGenerator(csvfile='~/db/csvfile.csv', jsThreshold=0.01)
     data = seq.generate_sequence()
     print(len(data))
 

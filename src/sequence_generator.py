@@ -1,6 +1,6 @@
 import pandas as pd
 
-class sequenceGenerator:
+class SequenceGenerator:
 
     def __init__(self, csvfile, jsThreshold):
         self.datafile = csvfile
