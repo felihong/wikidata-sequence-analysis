@@ -1,11 +1,10 @@
+import os
 from prefix_span import PrefixSpan
-from js_distance import JS
 from sequence_generator import SequenceGenerator
-import pandas as pd
 
+module_path = os.path.abspath(os.path.join('/src'))
 
 if __name__ == '__main__':
-
     seq = SequenceGenerator(csvfile='~/db/csvfile.csv', jsThreshold=0.01)
     data = seq.generate_sequence()
     print(len(data))
@@ -13,5 +12,3 @@ if __name__ == '__main__':
     prex = PrefixSpan()
     result_df = prex.prefix_span_display(dataset=data, minSupport=5)
     print(result_df)
-
-
