@@ -6,7 +6,7 @@ import pandas as pd
 
 if __name__ == '__main__':
 
-    seq = sequenceGenerator(csvfile='/Users/hongzhu/desktop/back_up.csv', jsThreshold=0.01)
+    seq = sequenceGenerator(csvfile='~/db/csvfile.csv', jsThreshold=0.01)
     data = seq.generate_sequence()
     print(len(data))
 
