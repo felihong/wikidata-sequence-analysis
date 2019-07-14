@@ -25,6 +25,25 @@ class PrefixSpan:
                 result.append(copy.copy(itemset))
         return result
 
+    def _is_subsequence(self, mainSequence, subSequence):
+        subSequenceClone = list(subSequence)  # clone the sequence, because we will alter it
+        return self._is_subsequenceRecursive(mainSequence, subSequenceClone)  # start recursion
+
+    """
+    Function for the recursive call of isSubsequence, not intended for external calls
+    """
+    def _is_subsequenceRecursive(self, mainSequence, subSequenceClone, start=0):
+        # Check if empty: End of recursion, all itemsets have been found
+        if (not subSequenceClone):
+            return True
+        # retrieves element of the subsequence and removes is from subsequence
+        firstElem = set(subSequenceClone.pop(0))
+        # Search for the first itemset...
+        for i in range(start, len(mainSequence)):
+            if (set(mainSequence[i]).issuperset(firstElem)):
+                return self._is_subsequenceRecursive(mainSequence, subSequenceClone, i + 1)
+        return False
+
     """
     Projects a dataset according to a given prefix, as done in PrefixSpan
     Args:
@@ -67,7 +86,8 @@ class PrefixSpan:
         return sorted(result.items())
 
     """
-    The PrefixSpan algorithm. Computes the frequent sequences in a seqeunce dataset for a given minSupport
+    The PrefixSpan algorithm. Computes the frequent sequences in a seqeunce dataset for a given minSupport and convert
+    the result into maximal frequent patterns or closed frequent patterns if necessary
     Args:
         dataset: A list of sequence-lists, for which the frequent (sub-)sequences are computed
         minSupport: The minimum support that makes a sequence frequent
@@ -76,6 +96,7 @@ class PrefixSpan:
     """
     def prefix_span(self, dataset, minSupport):
         result = []
+        minSupport = len(dataset)*minSupport
         itemCounts = self.generate_item_supports(dataset)
         for item, count in itemCounts:
             if count >= minSupport:
@@ -83,21 +104,6 @@ class PrefixSpan:
                 result.append((newPrefix, count))
                 result.extend(self.prefix_span_internal(self.project_database(dataset, [item], False), minSupport, newPrefix))
         return result
-    """
-    Convert the list result of PrefixSpan algorithm into dataframe for ease of display, which is ordered by minSupport count
-    """
-
-    def prefix_span_display(self, dataset, minSupport):
-        result = []
-        itemCounts = self.generate_item_supports(dataset)
-        for item, count in itemCounts:
-            if count >= minSupport:
-                newPrefix = [[item]]
-                result.append((newPrefix, count))
-                result.extend(
-                    self.prefix_span_internal(self.project_database(dataset, [item], False), minSupport, newPrefix))
-        df = pd.DataFrame(result).sort_values(by=[1], ascending=False)
-        return df
 
     def prefix_span_internal(self, dataset, minSupport, prevPrefixes=[]):
         result = []
@@ -120,3 +126,31 @@ class PrefixSpan:
                 result.append((newPrefix, count))
                 result.extend(self.prefix_span_internal(self.project_database(dataset, [item], True), minSupport, newPrefix))
         return result
+
+    """
+    Given a list of all frequent sequences and their counts, compute the set of closed frequent sequence (as a list)
+    """
+    def filterClosed(self, result):
+        for supersequence, countSeq in copy.deepcopy(result):
+            for subsequence, countSubSeq in copy.deepcopy(result):
+                if self._is_subsequence(supersequence, subsequence) and (
+                        countSeq == countSubSeq) and subsequence != supersequence:
+                    result.remove((subsequence, countSubSeq))
+        return result
+
+    """
+    Given a list of all frequent sequences and their counts, compute the set of maximal frequent sequence (as a list)
+    """
+    def filterMaximal(self, result):
+        for supersequence, countSeq in copy.deepcopy(result):
+            for subsequence, countSubSeq in copy.deepcopy(result):
+                if self._is_subsequence(supersequence, subsequence) and subsequence != supersequence:
+                    result.remove((subsequence, countSubSeq))
+        return result
+
+    """
+    Convert the list result of PrefixSpan algorithm into dataframe for ease of display, which is ordered by minSupport count
+    """
+    def display(self, result):
+        return pd.DataFrame(result).sort_values(by=[1], ascending=False)
+
