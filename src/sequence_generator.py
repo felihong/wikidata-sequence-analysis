@@ -37,11 +37,6 @@ class SequenceGenerator:
     Return:
         A list of list [[a], [b]], where a and b are collapsed edit types    
     """
-    '''def generate_sequence(self):
-        db = self.generate_db()
-        df = db.groupby(['item_id','user_id']).agg({'edit_type': list})
-        return df.values.tolist()'''
-
     def generate_sequence(self):
         db = self.generate_db()
         df = db.groupby(['item_id', 'user_id']).agg({'edit_type': list})
