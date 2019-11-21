@@ -4,7 +4,7 @@
 To install the project:
 ```
 git clone https://github.com/Felihong/wikidata-sequence-analysis.git
-cd wikidata-sequence-analysis.git
+cd wikidata-sequence-analysis
 pip install -r requirements.txt
 ```
 
